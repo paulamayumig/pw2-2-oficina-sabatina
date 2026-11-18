@@ -1,12 +1,8 @@
 package br.com.etechoracio.ingressos.entity;
 
-import br.com.etechoracio.ingressos.enums.CategoriaFilmeEnum;
-import br.com.etechoracio.ingressos.enums.ClassificacaoIndicativaEnum;
-import br.com.etechoracio.ingressos.enums.SimNaoEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Builder
@@ -23,11 +19,11 @@ public class Oficina {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // identity
     private Long id;
 
-    @Column(name = "TX_NOME")
-    private String nome;
+    @Column(name = "TX_NOME_OFICINA")
+    private String nomeOficina;
 
-    @Column(name = "DT_DATA")
-    private LocalDate data;
+    @Column(name = "TX_TUTOR")
+    private String tutor;
 
     @Enumerated()
     @Column(name = "HR_HORARIO")
@@ -39,9 +35,13 @@ public class Oficina {
 
 
     @Column(name = "NR_QUANTIDADE_VAGAS")
-    private Integer quantidadeVagas;
+    private Integer vagasMaximas;
+
+    @Column(name = "NR_TOTAL_INSCRITOS")
+    private Integer totalInscritos;
+
 
     @Column(name = "TX_STATUS")
-    private String Status;
+    private Boolean lotada;
 
 }

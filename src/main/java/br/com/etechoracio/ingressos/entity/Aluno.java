@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Entity
-@Table(name = "TBL_SESSAO")
+@Table(name = "TBL_ALUNO")
 @Getter
 @Setter
 public class Aluno {
@@ -27,9 +27,5 @@ public class Aluno {
 
     @JoinColumn(name = "DT_NASCIMENTO")
     private LocalDate dataNascimento;
-
-    @ManyToOne
-    @JoinColumn(name = "ID_ESCOLA")
-    private Escola escola;
 
 }

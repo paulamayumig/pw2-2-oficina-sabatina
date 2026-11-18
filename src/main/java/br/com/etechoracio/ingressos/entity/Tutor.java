@@ -2,16 +2,15 @@ package br.com.etechoracio.ingressos.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.time.LocalDateTime;
+import br.com.etechoracio.ingressos.enums.EspecialidadeEnum;
 
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @Entity
-@Table(name="TBL_PROFESSOR")
-public class Professor {
+@Table(name="TBL_TUTOR")
+public class Tutor {
     @Id
     @Column(name = "ID_PROFESSOR")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +23,6 @@ public class Professor {
     private String email;
 
     @Column(name = "TX_ESPECIALIDADE")
-    private String especialidade;
+    private EspecialidadeEnum especialidade;
 
 }
